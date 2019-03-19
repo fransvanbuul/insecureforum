@@ -1,5 +1,7 @@
 package com.example.insecureforum;
 
+import net.ttddyy.dsproxy.listener.logging.SLF4JLogLevel;
+import net.ttddyy.dsproxy.support.ProxyDataSourceBuilder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -16,7 +18,10 @@ public class ForumApplication {
 
     @Bean
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-        return new JdbcTemplate(dataSource);
+        DataSource loggingDataSource = ProxyDataSourceBuilder
+                .create(dataSource)
+                .logQueryBySlf4j(SLF4JLogLevel.INFO).build();
+        return new JdbcTemplate(loggingDataSource);
     }
 
 }

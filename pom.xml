@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <datasource-proxy.version>1.5</datasource-proxy.version>
     </properties>
 
     <dependencies>
@@ -26,6 +27,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.ttddyy</groupId>
+            <artifactId>datasource-proxy</artifactId>
+            <version>${datasource-proxy.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
