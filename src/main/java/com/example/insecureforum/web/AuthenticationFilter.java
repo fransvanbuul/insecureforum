@@ -1,4 +1,4 @@
-package com.example.insecureforum.controller;
+package com.example.insecureforum.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

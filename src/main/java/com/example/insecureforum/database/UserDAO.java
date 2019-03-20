@@ -1,4 +1,4 @@
-package com.example.insecureforum.dao;
+package com.example.insecureforum.database;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 import java.sql.ResultSet;
 
 @Component
-public class UserDao {
+public class UserDAO {
 
     private final JdbcTemplate jdbcTemplate;
 
-    public UserDao(JdbcTemplate jdbcTemplate) {
+    public UserDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

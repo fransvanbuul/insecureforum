@@ -1,7 +1,5 @@
-package com.example.insecureforum.dao;
+package com.example.insecureforum.database;
 
-import com.example.insecureforum.model.MessageDetailDTO;
-import com.example.insecureforum.model.MessageSummaryDTO;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +12,7 @@ import java.util.List;
 import java.util.Locale;
 
 @Component
-public class MessageDao {
+public class MessageDAO {
 
     private final JdbcTemplate jdbcTemplate;
     private final DateTimeFormatter formatter =
@@ -22,7 +20,7 @@ public class MessageDao {
                     .withLocale( Locale.US )
                     .withZone( ZoneId.systemDefault() );
 
-    public MessageDao(JdbcTemplate jdbcTemplate) {
+    public MessageDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

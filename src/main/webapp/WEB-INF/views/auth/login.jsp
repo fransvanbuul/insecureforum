@@ -7,11 +7,17 @@
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <div class="column is-6 is-offset-3">
-                        <p class="subtitle has-text-grey">Please login to access the forum</p>
+                        <c:if test="${!authenticationFailed}">
+                            <p class="subtitle has-text-grey">Please login to access the forum</p>
+                        </c:if>
+                        <c:if test="${authenticationFailed}">
+                            <p class="subtitle has-text-danger">Authentication failed, please retry</p>
+                        </c:if>
                         <div class="box">
                             <div class="field">
                                 <div class="control has-icons-left">
-                                    <input name="username" class="input is-large" type="text" placeholder="Username" autofocus="">
+                                    <input name="username" class="input is-large" type="text"
+                                           placeholder="Username" autofocus="" value="${prefillUsername}">
                                     <span class="icon is-large is-left">
                                         <i class="fas fa-user"></i>
                                     </span>
@@ -19,7 +25,8 @@
                             </div>
                             <div class="field">
                                 <div class="control has-icons-left">
-                                    <input name="password" class="input is-large" type="password" placeholder="Password">
+                                    <input name="password" class="input is-large" type="password"
+                                           placeholder="Password">
                                     <span class="icon is-large is-left">
                                         <i class="fas fa-eye"></i>
                                     </span>

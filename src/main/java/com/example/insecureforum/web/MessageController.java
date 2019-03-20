@@ -1,6 +1,6 @@
-package com.example.insecureforum.controller;
+package com.example.insecureforum.web;
 
-import com.example.insecureforum.dao.MessageDao;
+import com.example.insecureforum.database.MessageDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -9,9 +9,9 @@ import org.springframework.web.servlet.view.RedirectView;
 @Controller
 public class MessageController {
 
-    private final MessageDao messageDao;
+    private final MessageDAO messageDao;
 
-    public MessageController(MessageDao messageDao) {
+    public MessageController(MessageDAO messageDao) {
         this.messageDao = messageDao;
     }
 

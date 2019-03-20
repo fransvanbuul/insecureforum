@@ -1,4 +1,4 @@
-package com.example.insecureforum.model;
+package com.example.insecureforum.database;
 
 public class MessageSummaryDTO {
 
