@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/bulma.css" />
     <link rel="stylesheet" href="/css/forum.css" />
     <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="/js/forum.js"></script>
+    <script type="text/javascript" src="/js/navbar.js"></script>
 </head>
 <body>
     <div class="container navcontainer">

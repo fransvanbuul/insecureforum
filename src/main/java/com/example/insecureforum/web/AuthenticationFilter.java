@@ -24,9 +24,9 @@ public class AuthenticationFilter implements Filter {
 
     private final static Predicate<String> whitelist = Pattern.compile("^(" +
             "/WEB-INF/views/.*|" +
-            "/images/.*|" +
-            "/favicon.ico|" +
             "/css/.*|" +
+            "/js/.*|" +
+            "/favicon.ico|" +
             "/webfonts/.*|" +
             "/auth/.*|" +
             "/|)$").asPredicate();

@@ -26,11 +26,17 @@
                             <div class="field">
                                 <div class="control has-icons-left">
                                     <input name="password" class="input is-large" type="password"
-                                           placeholder="Password">
-                                    <span class="icon is-large is-left">
-                                        <i class="fas fa-eye"></i>
-                                    </span>
+                                           placeholder="Password" id="pwdInputField">
+                                    <a class="icon is-large is-left">
+                                        <i class="fas fa-lock" ></i>
+                                    </a>
                                 </div>
+                            </div>
+                            <div class="field">
+                                <label class="checkbox">
+                                    <input type="checkbox" id="pwdToggle">
+                                    Show password
+                                </label>
                             </div>
                             <button class="button is-block is-primary is-large is-fullwidth">Login</button>
                         </div>
@@ -39,4 +45,5 @@
             </div>
         </section>
     </form>
+    <script type="text/javascript" src="/js/login.js"></script>
 </t:pagetemplate>
