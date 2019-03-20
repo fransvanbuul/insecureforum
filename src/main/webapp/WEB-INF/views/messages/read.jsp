@@ -2,7 +2,6 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <t:pagetemplate>
-
     <section class="section">
         <div class="container">
             <div class="columns">
@@ -38,5 +37,4 @@
             </div>
         </div>
     </section>
-
 </t:pagetemplate>

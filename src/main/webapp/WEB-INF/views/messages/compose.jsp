@@ -2,7 +2,6 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <t:pagetemplate>
-
     <form action="./compose" method="post">
         <section class="section">
             <div class="container">
@@ -41,5 +40,4 @@
             </div>
         </section>
     </form>
-
 </t:pagetemplate>

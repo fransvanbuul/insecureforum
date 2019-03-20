@@ -22,7 +22,7 @@ CREATE TABLE messages (
 INSERT INTO messages
   (author, subject, body, timestamp)
 VALUES
-  ('system', 'Inscure Forum up and running',
+  ('system', 'Insecure Forum up and running',
    '<br>' ||
    'When you see this message, it means that the Insecure Forum is up and running.<br>' ||
    'Have a look around, play with it and see if you can detect the vulnerabilities.<br>' ||

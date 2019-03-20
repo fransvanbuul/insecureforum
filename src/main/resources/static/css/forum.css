@@ -7,3 +7,8 @@ article:last-child {
     padding-bottom: 0;
     border-bottom: none;
 }
+
+.navcontainer {
+    border-bottom: 1px solid hsl(0, 0%, 29%);
+}
+

@@ -20,7 +20,7 @@ public class ForumApplication {
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         DataSource loggingDataSource = ProxyDataSourceBuilder
                 .create(dataSource)
-                .logQueryBySlf4j(SLF4JLogLevel.INFO).build();
+                .logQueryBySlf4j(SLF4JLogLevel.DEBUG, "com.example.insecureforum.jdbc").build();
         return new JdbcTemplate(loggingDataSource);
     }
 
