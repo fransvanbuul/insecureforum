@@ -1,34 +1,64 @@
 package com.example.insecureforum.dao;
 
-import com.example.insecureforum.model.Message;
+import com.example.insecureforum.model.MessageDetailDTO;
+import com.example.insecureforum.model.MessageSummaryDTO;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.List;
+import java.util.Locale;
 
 @Component
 public class MessageDao {
 
     private final JdbcTemplate jdbcTemplate;
+    private final DateTimeFormatter formatter =
+            DateTimeFormatter.ofLocalizedDateTime( FormatStyle.MEDIUM )
+                    .withLocale( Locale.US )
+                    .withZone( ZoneId.systemDefault() );
 
     public MessageDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<Message> list() {
+    public List<MessageSummaryDTO> list() {
         return jdbcTemplate.query(
-                "SELECT id, author_id, subject, body, timestamp FROM messages",
+                "SELECT id, author, subject, timestamp FROM messages ORDER BY timestamp DESC",
                 (ResultSet rs, int rowNum) -> {
-                    Message message = new Message();
+                    MessageSummaryDTO message = new MessageSummaryDTO();
                     message.setId(rs.getLong(1));
-                    message.setAuthor_id(rs.getLong(2));
+                    message.setAuthor(rs.getString(2));
                     message.setSubject(rs.getString(3));
-                    message.setBody(rs.getString(4));
-                    message.setTimestamp(rs.getTimestamp(5).toString());
+                    Instant instant = rs.getTimestamp(4).toInstant();
+                    message.setTimestamp(formatter.format(instant));
                     return message;
                 });
     }
 
+    public MessageDetailDTO read(String id) {
+        return jdbcTemplate.query("SELECT id, author, subject, body, timestamp " +
+                "FROM messages WHERE id = " + id,
+                 rs -> {
+                    rs.next();
+                    MessageDetailDTO message = new MessageDetailDTO();
+                    message.setId(rs.getLong(1));
+                    message.setAuthor(rs.getString(2));
+                    message.setSubject(rs.getString(3));
+                    message.setBody(rs.getString(4));
+                    Instant instant = rs.getTimestamp(5).toInstant();
+                    message.setTimestamp(formatter.format(instant));
+                    return message;
+                });
+    }
+
+    public void post(String author, String subject, String body) {
+        jdbcTemplate.execute("INSERT INTO messages(author, subject, body, timestamp) " +
+                "VALUES ('" + author + "', '" + subject + "', '" + body + "', NOW())");
+    }
 
 }

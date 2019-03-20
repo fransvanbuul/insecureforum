@@ -13,13 +13,19 @@ VALUES
 
 CREATE TABLE messages (
   id BIGINT AUTO_INCREMENT,
-  author_id BIGINT,
+  author VARCHAR(255),
   subject VARCHAR(255),
   body CLOB,
   timestamp TIMESTAMP
 );
 
 INSERT INTO messages
-  (author_id, subject, body, timestamp)
+  (author, subject, body, timestamp)
 VALUES
-  (1, 'Welcome', 'Security Forum installed.', NOW());
+  ('system', 'Inscure Forum up and running',
+   '<br>' ||
+   'When you see this message, it means that the Insecure Forum is up and running.<br>' ||
+   'Have a look around, play with it and see if you can detect the vulnerabilities.<br>' ||
+   '<br>' ||
+   'But whatever you do, do not use this application in production!<br>',
+   NOW());

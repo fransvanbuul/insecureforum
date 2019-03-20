@@ -9,8 +9,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/images/skull-crossbones-32.png">
     <link rel="stylesheet" href="/css/fontawesome.min.css">
     <link rel="stylesheet" href="/css/solid.min.css">
+    <link rel="stylesheet" href="/css/brands.min.css">
     <link rel="stylesheet" href="/css/bulma.css" />
-    <link rel="stylesheet" href="/css/blog.css" />
+    <link rel="stylesheet" href="/css/forum.css" />
 </head>
 <body>
 <nav class="navbar is-white">
