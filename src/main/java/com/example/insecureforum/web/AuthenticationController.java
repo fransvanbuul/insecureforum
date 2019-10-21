@@ -23,10 +23,12 @@ public class AuthenticationController {
     }
 
     @RequestMapping(value = "/auth/login", method = RequestMethod.GET)
-    public String login(HttpServletRequest request, HttpServletResponse response) {
+    public String login(@RequestParam(value = "username", defaultValue = "") String username,
+                        HttpServletRequest request,
+                        HttpServletResponse response) {
         eraseCookie(request, response);
-        request.setAttribute("authenticationFailed", false);
-        request.setAttribute("prefillUsername", "");
+        request.setAttribute("authenticationFailed", !username.isEmpty());
+        request.setAttribute("prefillUsername", username);
         return "auth/login";
     }
 
@@ -40,9 +42,7 @@ public class AuthenticationController {
             return new RedirectView("/", true);
         } else {
             eraseCookie(request, response);
-            request.setAttribute("authenticationFailed", true);
-            request.setAttribute("prefillUsername", username);
-            return "auth/login";
+            return new RedirectView("/auth/login?username=" + username, true);
         }
     }
 

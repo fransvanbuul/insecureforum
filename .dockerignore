@@ -1,0 +1,7 @@
+.git
+.idea
+.settings
+.mvn
+.project
+.classpath
+src

@@ -11,7 +11,7 @@
                             <p class="subtitle has-text-grey">Please login to access the forum</p>
                         </c:if>
                         <c:if test="${authenticationFailed}">
-                            <p class="subtitle has-text-danger">Authentication failed, please retry</p>
+                            <p class="subtitle has-text-danger">Authentication failed for user ${prefillUsername}, please retry</p>
                         </c:if>
                         <div class="box">
                             <div class="field">

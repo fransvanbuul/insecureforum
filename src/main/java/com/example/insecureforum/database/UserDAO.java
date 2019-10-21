@@ -15,6 +15,7 @@ public class UserDAO {
     }
 
     public boolean authenticate(String username, String password) {
+
         return jdbcTemplate.query(
                 "SELECT 1 FROM users WHERE username = '" + username + "' AND password = '" + password + "'",
                 ResultSet::next);
