@@ -13,6 +13,7 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
+    goals: 'clean package'
     publishJUnitResults: false
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
@@ -23,6 +24,7 @@ steps:
   inputs:
     runBuildTranslate: true
     applicationType: 'java'
+    fortifySourceTranslate: 'pom.xml'
     fortifyBuildId: 'insecureforum'
     runFortifyRulepackUpdate: false
     runFortifyClean: true
