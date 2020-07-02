@@ -24,7 +24,7 @@ steps:
   inputs:
     runBuildTranslate: true
     applicationType: 'java'
-    fortifySourceTranslate: 'pom.xml'
+    fortifySourceTranslate: 'mvn clean package'
     fortifyBuildId: 'insecureforum'
     runFortifyRulepackUpdate: false
     runFortifyClean: true
