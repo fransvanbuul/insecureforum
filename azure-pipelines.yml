@@ -19,3 +19,14 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+- task: FortifySCA@6
+  inputs:
+    runBuildTranslate: true
+    applicationType: 'java'
+    fortifyBuildId: 'insecureforum'
+    runFortifyRulepackUpdate: false
+    runFortifyClean: true
+    scaVerbose: false
+    scaDebug: false
+    runFortifyScan: true
+    fortifyScanType: 'Local'
