@@ -22,13 +22,12 @@ steps:
     sonarQubeRunAnalysis: false
 - task: FortifySCA@6
   inputs:
-    licenseFile: /home/ubuntu/fortify.license  
     runBuildTranslate: true
     applicationType: 'java'
     fortifyBuildId: 'insecureforum'
-    runFortifyRulepackUpdate: false
+    runFortifyRulepackUpdate: true
     runFortifyClean: true
-    scaVerbose: false
-    scaDebug: false
+    scaVerbose: true
+    scaDebug: true
     runFortifyScan: true
     fortifyScanType: 'Local'
