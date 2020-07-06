@@ -25,7 +25,7 @@ steps:
     runBuildTranslate: true
     applicationType: 'java'
     fortifyBuildId: 'insecureforum'
-    runFortifyRulepackUpdate: true
+    runFortifyRulepackUpdate: false
     runFortifyClean: true
     scaVerbose: true
     scaDebug: true
