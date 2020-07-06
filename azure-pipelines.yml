@@ -22,7 +22,7 @@ steps:
     sonarQubeRunAnalysis: false
 - task: FortifySCA@6
   inputs:
-    licenseFile: /opt/sca/fortify.license  
+    licenseFile: /home/ubuntu/fortify.license  
     runBuildTranslate: true
     applicationType: 'java'
     fortifyBuildId: 'insecureforum'
