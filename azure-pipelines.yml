@@ -24,6 +24,7 @@ steps:
   inputs:
     runBuildTranslate: true
     applicationType: 'java'
+    buildToolOptions: 'mvn compile'
     fortifyBuildId: 'insecureforum'
     runFortifyRulepackUpdate: false
     runFortifyClean: true
